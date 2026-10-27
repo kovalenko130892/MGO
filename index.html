@@ -113,27 +113,41 @@
             transform: scale(1.1);
         }
 
+        /* Рамка кнопки окрашена в цвет собственной каймы иконки соцсети,
+           чтобы она не читалась как отдельная обводка вокруг логотипа */
         .social-btn.vk {
             background: #009b35;
-            border-color: #009b35;
+            border-color: #1675d2;
         }
 
         .social-btn.vk:hover {
             background: rgba(0, 155, 53, 0.8);
         }
 
+        /* У МАХ кайма иконки не однородная, а градиент по кругу —
+           поэтому рамка повторяет этот градиент, и стык не читается */
         .social-btn.max {
-            background: #ff7c2c;
-            border-color: #ff7c2c;
+            --rim-max: conic-gradient(from 0deg,
+                #5246bc 0deg,
+                #683fb2 45deg,
+                #8146b2 90deg,
+                #7b51b4 135deg,
+                #6c88ca 180deg,
+                #59adda 225deg,
+                #4580d2 270deg,
+                #3650c2 315deg,
+                #5246bc 360deg);
+            background: var(--rim-max);
+            border-color: transparent;
         }
 
         .social-btn.max:hover {
-            background: rgba(255, 124, 44, 0.8);
+            background: var(--rim-max);
         }
 
         .social-btn.tg {
             background: #009b35;
-            border-color: #009b35;
+            border-color: #26a4e3;
         }
 
         .social-btn.tg:hover {
