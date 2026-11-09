@@ -147,11 +147,17 @@
         .social-btn.site {
             background: #ffffff;
             border-color: #009b35;
+            overflow: hidden;
         }
 
+        /* Логотип вписан целиком: у картинки нет собственной круглой
+           маски, иначе она срезала бы край рисунка вместе с собой.
+           Белые углы квадрата уходят под круг кнопки */
         .social-btn.site img {
-            width: 94%;
-            height: 94%;
+            width: 87%;
+            height: 87%;
+            object-fit: contain;
+            border-radius: 0;
         }
 
         .social-btn svg {
